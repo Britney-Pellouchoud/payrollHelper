@@ -17,12 +17,9 @@ def sortCoachActivity(spreadsheet):
         clinics = spreadsheet.loc[spreadsheet["Type"] != "Lesson"]
         createFile(privateLessons, "private.xlsx")
         createFile(clinics, "clinics.xlsx")
-        
-        
-
+               
 def sortData(spreadsheet):
     spreadsheet = pd.ExcelFile(spreadsheet)
-    
     sheets = list(spreadsheet.sheet_names)
     coaches = []
     for sheet in sheets:
@@ -35,17 +32,10 @@ def sortData(spreadsheet):
                 teacherInfo = df.loc[df["Teacher"] == currName]
                 sortCoachActivity(teacherInfo)
                 break
-                # make new spreadsheet for this new teacher
-
-       
-    # group by teacher name, in a new excel sheet
-
     return None
 
 
     
-            
-
 sortData(file)  
 
 
@@ -53,9 +43,4 @@ sortData(file)
 
 
 
-
-# NextSteps
-# 1. Calculate the pay of each person.
-# 2. Do the same thing for office workers/stringer
-# 3. Revert the dataframe back into the excel sheet
 
