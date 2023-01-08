@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <title>Payroll Automation</title>
+        <style>
+            .spacer {
+                display: flex;
+                flex-direction: column;
+                gap:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="post"
+              action="/data"
+              enctype="multipart/form-data"
+              class="spacer">
+            <div class="spacer">
+                <label for="file">Choose file to upload:</label>
+                <input type="file" id="file" name="file" accept=".xls,.xlsx"/>
+            </div>
+            <div>
+                <button type="submit"
+                        style="cursor: pointer;">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </body>
+</html>
